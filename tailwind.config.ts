@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +20,13 @@ export default {
 		},
 		extend: {
 			colors: {
+				pizza: {
+					red: "#C14953",
+					cream: "#F2EFC7",
+					olive: "#435E55",
+					brown: "#6B4226",
+					light: "#F8F4E3"
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
