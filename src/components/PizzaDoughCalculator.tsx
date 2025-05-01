@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Dough, Pizza, Salt, Wheat, Droplet } from "lucide-react";
+import { Pizza, Wheat, Droplet, Scale } from "lucide-react";
 
 interface CalculatorOutput {
   totalDoughBalls: number;
@@ -157,7 +157,7 @@ const PizzaDoughCalculator = () => {
         <Card className="shadow-md border-pizza-cream">
           <CardHeader className="bg-pizza-olive text-white rounded-t-lg">
             <CardTitle className="flex items-center gap-2">
-              <Dough className="h-5 w-5" />
+              <Pizza className="h-5 w-5" />
               Calculated Ingredients
             </CardTitle>
             <CardDescription className="text-pizza-light">
@@ -176,7 +176,7 @@ const PizzaDoughCalculator = () => {
               
               <div className="flex items-center justify-between border-b border-dashed border-pizza-cream pb-2">
                 <div className="flex items-center gap-2">
-                  <Salt className="h-5 w-5 text-pizza-red" />
+                  <Scale className="h-5 w-5 text-pizza-red" />
                   <span className="text-pizza-brown">Total Salt</span>
                 </div>
                 <strong className="text-pizza-red">{output.totalSalt}g</strong>
@@ -192,7 +192,7 @@ const PizzaDoughCalculator = () => {
               
               <div className="flex items-center justify-between border-b border-dashed border-pizza-cream pb-2">
                 <div className="flex items-center gap-2">
-                  <Dough className="h-5 w-5 text-pizza-red" />
+                  <Pizza className="h-5 w-5 text-pizza-red" />
                   <span className="text-pizza-brown">Total Dry Yeast</span>
                 </div>
                 <strong className="text-pizza-red">{output.totalDryYeast}g</strong>
