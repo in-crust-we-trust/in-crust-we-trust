@@ -26,23 +26,14 @@ const PizzaDoughCalculator = () => {
     totalFlour: 0
   });
 
-  // Constants based on the formula
-  const WATER_PERCENTAGE = 62.5; // Hydration percentage
-  const SALT_PERCENTAGE = 2.55; // Salt percentage
-  const YEAST_PERCENTAGE = 0.204; // Dry yeast percentage
-  const TOTAL_PERCENTAGE = 100 + WATER_PERCENTAGE + SALT_PERCENTAGE + YEAST_PERCENTAGE; // 165.254%
-
   useEffect(() => {
-    // Calculate total dough weight
     const totalDoughWeight = doughBalls * weightPerBall;
 
-    // Calculate flour amount based on the formula
-    const totalFlour = totalDoughWeight / (TOTAL_PERCENTAGE / 100);
+    const totalFlour = Math.round(totalDoughWeight / 1.683);
 
-    // Calculate other ingredients based on percentages
-    const totalWater = totalFlour * (WATER_PERCENTAGE / 100);
-    const totalSalt = totalFlour * (SALT_PERCENTAGE / 100);
-    const totalDryYeast = totalFlour * (YEAST_PERCENTAGE / 100);
+    const totalWater = Math.round(totalFlour * 0.625);
+    const totalSalt = Math.round(totalFlour * 0.025);
+    const totalDryYeast = Math.round((doughBalls / 3) + 0.2) * (weightPerBall * 0.0064);
 
     setOutput({
       totalDoughBalls: doughBalls,
@@ -79,7 +70,7 @@ const PizzaDoughCalculator = () => {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <Alert className="mb-6 bg-pizza-cream border-pizza-red">
         <AlertDescription className="text-pizza-brown">
-          <strong>Heads up!</strong> This calculator is dialed in for flour with 12.5g-13g protein (like typical 'All-Purpose' in some regions, or 'Strong Bread Flour' in others). Results may vary with different flour types.
+          <strong>Heads up!</strong> This calculator is dialed in for flour with 12.5g-13g protein. Results may vary with different flour types.
         </AlertDescription>
       </Alert>
       
