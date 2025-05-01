@@ -1,0 +1,12 @@
+services:
+  in-crust-we-trust-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: in-crust-we-trust-app
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: production
